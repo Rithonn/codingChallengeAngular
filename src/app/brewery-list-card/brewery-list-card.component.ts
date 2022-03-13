@@ -37,7 +37,6 @@ export class BreweryListCardComponent implements OnInit{
   open(content: any){
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
       if(result){
-        console.log(result);
         this.searchBreweries(result);
       }
     }).catch(error => {
