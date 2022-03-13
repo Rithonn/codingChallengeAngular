@@ -1,4 +1,4 @@
 
-<div *ngIf="apiLoaded | async">
+<div *ngIf="apiLoaded | async" [hidden]="Latitude === 0 && Longitude === 0">
   <google-map [options]="options"></google-map>
 </div>

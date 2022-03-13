@@ -28,8 +28,10 @@ export class MoreInfoComponent implements OnInit {
     //https://api.openbrewerydb.org/breweries/
     this.http.get<any>(this.ROOT_URL + '/' + this.brewery_id).subscribe(data => {
       this.brewery = data;
-      this.latitude = parseFloat(this.brewery.latitude);
-      this.longitude = parseFloat(this.brewery.longitude);
+      if(this.brewery.latitude &&  this.brewery.longitude){
+        this.latitude = parseFloat(this.brewery.latitude);
+        this.longitude = parseFloat(this.brewery.longitude);
+      }
       this.loadData = true;
     });
   }
