@@ -1,4 +1,15 @@
 <div class="w-75 d-flex m-auto">
+  <input id="typeahead-basic" type="text" class="form-control" [(ngModel)]="searchText" placeholder="Search by Name"/>
+  <div class="btn-group" role="group">
+    <input type="radio" class="btn-check" autocomplete="off">
+    <label class="btn btn-primary" >Change Location</label>
+
+    <input type="radio" class="btn-check" autocomplete="off">
+    <label class="btn btn-primary">Reset Location</label>
+  </div>
+
+</div>
+<div class="w-75 d-flex m-auto">
   <table class="table table-striped">
     <thead>
     <tr>
@@ -9,12 +20,13 @@
     </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let brew of breweries">
+    <tr *ngFor="let brew of breweries | searchFilter : searchText">
         <th><a [routerLink]="['/moreInfo', brew.id]">{{brew.name}}</a></th>
         <td>{{brew.brewery_type}}</td>
         <td>{{brew.street}}, {{brew.city}}, {{brew.state}}, {{brew.postal_code}}</td>
         <td><a target="_blank" href='{{brew.website_url}}'>{{brew.website_url}}</a></td>
       </tr>
+
     </tbody>
   </table>
 </div>

@@ -9,6 +9,8 @@ import { BreweryListCardComponent } from './brewery-list-card/brewery-list-card.
 import {GoogleMapsModule} from "@angular/google-maps";
 import { GoogleMapsLayoutComponent } from './google-maps-layout/google-maps-layout.component';
 import { MoreInfoComponent } from './more-info/more-info.component';
+import { SearchFilterPipe } from './search-filter.pipe';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -18,6 +20,7 @@ import { MoreInfoComponent } from './more-info/more-info.component';
     GoogleMapsLayoutComponent,
     MoreInfoComponent,
     routingComponents,
+    SearchFilterPipe,
   ],
   imports: [
     BrowserModule,
@@ -26,6 +29,7 @@ import { MoreInfoComponent } from './more-info/more-info.component';
     HttpClientModule,
     GoogleMapsModule,
     HttpClientJsonpModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

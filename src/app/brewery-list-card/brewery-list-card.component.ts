@@ -10,12 +10,12 @@ import {environment} from "../../environments/environment";
 export class BreweryListCardComponent implements OnInit{
 
   breweries: any;
-
+  searchText: string = '';
   constructor(private http: HttpClient) {
   }
 
   ngOnInit() {
-    this.http.get<any>(environment.apiUrl + '/breweries?by_city=york&by_state=Pennsylvania').subscribe(data => {
+    this.http.get<any>(environment.apiUrl + '/breweries?by_city=New York&by_state=New York').subscribe(data => {
       this.breweries = data;
     });
   }
