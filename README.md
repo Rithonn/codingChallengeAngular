@@ -25,3 +25,24 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## My Notes
+
+Ran into an issue linking the project with the web api that I was building. Angular and possible .net core have issues playing nicely
+with "Same Origin" Policy and CORS. I know there are work arounds by adding configuration exceptions to the project but I am
+unsure if I will have to the time to get to it. 
+
+I am also aware that the project currently at the time of writing this does not include any services to handle the web requests
+to the api. I didn't think they were needed for the short lived expectancy of the project and the very minimal requests that were being done
+
+Google Maps play nicely with this updated directory (https://www.npmjs.com/package/@angular/google-maps) The one provided in the challenge did not work
+at the time of using it due to outdated libraries
+
+### Would like to do or have done
+
+- Add search functionality to bars
+
+- Add pagination
+
+- Add web api that I built
+
