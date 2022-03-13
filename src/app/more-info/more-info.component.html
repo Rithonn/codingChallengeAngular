@@ -1,0 +1,20 @@
+<div *ngIf="loadData">
+  <div class="w-75 d-flex m-auto border-bottom" >
+    <h1 class="m-auto">{{brewery.name}}</h1>
+  </div>
+  <div class="p-3 w-25 m-auto">
+    <ul class="list-group">
+      <li class="list-group-item">Name: {{brewery.name}}</li>
+      <li class="list-group-item">Address: {{brewery.street}} {{brewery.city}} {{brewery.state}}, {{brewery.postal_code}}</li>
+      <li class="list-group-item">Website: <a target="_blank" href="{{brewery.website_url || ''}}">{{brewery.website_url || 'N/A'}}</a> </li>
+      <li class="list-group-item">Phone: {{brewery.phone || "N/A"}}</li>
+      <li class="list-group-item">Last Updated: {{brewery.updated_at}}</li>
+      <li class="list-group-item">Created: {{brewery.created_at}}</li>
+    </ul>
+  </div>
+  <div class="d-flex">
+    <app-google-maps-layout class="m-auto" [Latitude]="latitude" [Longitude]="longitude"></app-google-maps-layout>
+  </div>
+</div>
+
+

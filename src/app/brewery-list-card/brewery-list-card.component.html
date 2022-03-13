@@ -1,0 +1,21 @@
+<div class="w-75 d-flex m-auto">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Type</th>
+      <th scope="col">Address</th>
+      <th scope="col">Website</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let brew of breweries">
+        <th><a [routerLink]="['/moreInfo', brew.id]">{{brew.name}}</a></th>
+        <td>{{brew.brewery_type}}</td>
+        <td>{{brew.street}}, {{brew.city}}, {{brew.state}}, {{brew.postal_code}}</td>
+        <td><a target="_blank" href='{{brew.website_url}}'>{{brew.website_url}}</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
